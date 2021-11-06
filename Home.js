@@ -26,18 +26,18 @@ const styles = StyleSheet.create({
   content: {
     fontFamily: "ZenKakuGotchicAntique-Light",
     fintWeight: "300"
-  }
+  },
 });
 
 const Home = props => {
   return (
     <View style={styles.container}>
-      <Image source={require("./images/gwyn.jpg")} />
+      <Image style={styles.logo} source={require("./images/gwyn.jpeg")} />
       <Text style={styles.title}>Welcome to my first react native app </Text>
       <Text style={styles.subtitle}>
         {props.userName}
       </Text>
-      <View style={style.textContainer}>
+      <View style={styles.textContainer}>
         <Text style={styles.content}>
           {introText}
         </Text>
