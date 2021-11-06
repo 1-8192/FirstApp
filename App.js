@@ -6,6 +6,7 @@
  * @flow strict-local
  */
 
+import 'react-native-gesture-handler'
 import React from 'react';
 import {Node} from 'react';
 import {
@@ -13,10 +14,14 @@ import {
   StyleSheet,
   useColorScheme,
 } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import Home from './Home'
 import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
+
+const STACK = createStackNavigator();
 
 const Section = ({children, title}): Node => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -54,8 +59,17 @@ const App: () => Node = () => {
   return (
     <>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} hidden />
-      <Home username='user' />
-      </>
+      <NavigationContainer>
+        <STACK.Navigator
+         initalRouteName='Home'
+         headerMode='float'
+        >
+          <STACK.Screen name='Home' options={{headerShown: false}}>
+            {(props) => <Home {...props} username='Test User' />}
+          </STACK.Screen>
+        </STACK.Navigator>
+      </NavigationContainer>
+    </>
   );
 };
 
