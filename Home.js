@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   },
   content: {
     fontFamily: "ZenKakuGotchicAntique-Light",
-    fintWeight: "300"
+    fontWeight: "300"
   },
 });
 

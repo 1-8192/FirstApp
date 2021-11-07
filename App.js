@@ -17,6 +17,7 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from './Home'
+import Tickets from './Tickets';
 import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
@@ -67,6 +68,10 @@ const App: () => Node = () => {
           <STACK.Screen name='Home' options={{headerShown: false}}>
             {(props) => <Home {...props} username='Test User' />}
           </STACK.Screen>
+          <STACK.Screen name='Tickets' component={Tickets} options={{
+            headerTitleAlign: 'center',
+            headerTitleStyle: {fontFamily: 'ZenKakuGothicAntique-Regular'}
+          }} />
         </STACK.Navigator>
       </NavigationContainer>
     </>
