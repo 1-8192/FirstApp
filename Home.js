@@ -1,20 +1,26 @@
 import React from "react";
 import { View, Image, Text, StyleSheet } from "react-native";
+import Menu from "./Menu";
 
 const introText = "this is just nothing";
 const styles = StyleSheet.create({
   container: {
     flexDirection: "column",
     alignItems: "center",
-    padding: 20
+    paddingTop: 20,
+    paddingBottom: 20,
+    flex: 1
   },
   textContainer: {
-    textAlign: "center",
-    paddingTop: 10
+    padding: 20
   },
   logo: {
     height: 100,
     width: 150
+  },
+  heroImage: {
+    height: 170,
+    width: "100%"
   },
   title: {
     fontFamily: "ZenKakuGothicAntique-Regular"
@@ -27,6 +33,10 @@ const styles = StyleSheet.create({
     fontFamily: "ZenKakuGotchicAntique-Light",
     fontWeight: "300"
   },
+  menu: {
+    position: "absolute",
+    bottom: 10
+  }
 });
 
 const Home = props => {
@@ -37,10 +47,14 @@ const Home = props => {
       <Text style={styles.subtitle}>
         {props.userName}
       </Text>
+      <Image style={styles.heroImage} source={require("./images/gwyn.jpeg")} />
       <View style={styles.textContainer}>
         <Text style={styles.content}>
           {introText}
         </Text>
+      </View>
+      <View style={styles.menu}>
+        <Menu />
       </View>
     </View>
   );
