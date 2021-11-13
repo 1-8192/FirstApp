@@ -5,15 +5,15 @@ import EventTickets from "./EventTicketsDB";
 const Tickets = () => {
   const ticketItem = ({ item }) => {
     return (
-      <View style={Style.tickets}>
+      <View style={styles.tickets}>
         <View>
           <Image style={styles.img} />
         </View>
         <View>
-          <Text style={styles.tickettile}>
+          <Text style={styles.ticketTitle}>
             {item.event}
           </Text>
-          <Text style={styles.ticketTagLine}>
+          <Text style={styles.tagLine}>
             {item.tagLine}
           </Text>
           <Text
