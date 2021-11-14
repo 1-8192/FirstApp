@@ -1,8 +1,15 @@
 import React from "react";
-import { StyleSheet, Text, View, Flatlist, Image } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Flatlist,
+  Image,
+  TouchableOpacity
+} from "react-native";
 import EventTickets from "./EventTicketsDB";
 
-const Tickets = () => {
+const Tickets = ({ navigation }) => {
   const ticketItem = ({ item }) => {
     return (
       <View style={styles.tickets}>
@@ -26,7 +33,12 @@ const Tickets = () => {
           <Text style={styles.tagLine}>
             Price: {item.price}
           </Text>
-          <Text style={styles.ticketButton}>Buy Ticket</Text>
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate("Purchase", { ticketID: item.eventID })}
+          >
+            <Text style={styles.ticketButton}>Buy Ticket</Text>
+          </TouchableOpacity>
         </View>
       </View>
     );

@@ -18,13 +18,15 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from './Home'
 import Tickets from './Tickets';
+import Contact from './Contact';
 import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
+import TicketPurchase from './TicketPurchase';
 
 const STACK = createStackNavigator();
 
-const Section = ({children, title}): Node => {
+const Section = ({children, title})  => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
@@ -50,7 +52,7 @@ const Section = ({children, title}): Node => {
   );
 };
 
-const App: () => Node = () => {
+const App =  () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
@@ -72,9 +74,26 @@ const App: () => Node = () => {
             headerTitleAlign: 'center',
             headerTitleStyle: {fontFamily: 'ZenKakuGothicAntique-Regular'}
           }} />
+          <STACK.Screen 
+          name='Contact' 
+          component={Contact} 
+          options={{ 
+            headerTitleAlign: 'center', 
+            headerTitleStyle: {fontFamily: 'ZenKakuGothicAntique-Regular'}, 
+            headerTitle: 'Contact Us'
+            }}
+            />
+          <STACK.Screen 
+          name='Purchase'
+          component={TicketPurchase}
+          options={{
+            headerTitleAlign: 'center',
+            headerTitle: 'Purchase Tickets'
+          }}
+          />
         </STACK.Navigator>
       </NavigationContainer>
-    </>
+      </>
   );
 };
 
