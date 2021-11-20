@@ -19,6 +19,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from './Home'
 import Tickets from './Tickets';
 import Contact from './Contact';
+import News from './News';
 import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
@@ -89,6 +90,14 @@ const App =  () => {
           options={{
             headerTitleAlign: 'center',
             headerTitle: 'Purchase Tickets'
+          }}
+          />
+          <STACK.Screen 
+          name='News'
+          component={News}
+          options={{
+            headerTitleAlign: 'center',
+            headerTitle: 'Latest News'
           }}
           />
         </STACK.Navigator>

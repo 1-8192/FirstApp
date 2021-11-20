@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     marginBottom: 50
   },
   labels: {
-    ontFamily: "ZenKakuGothicAntique-Regular"
+    fontFamily: "ZenKakuGothicAntique-Regular"
   }
 });
 
